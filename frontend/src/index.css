@@ -526,7 +526,7 @@ input, textarea {
   backdrop-filter: blur(8px);
   @media (max-width: 768px) {
   .category-pill {
-    padding: 8px 20px;
+    padding: 8px 35px;
     font-size: 0.75rem;
     flex-shrink: 0;
   }
