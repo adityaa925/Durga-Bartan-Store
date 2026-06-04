@@ -529,7 +529,7 @@ input, textarea {
     display: inline-flex;
     align-items: center;
     justify-content: center; /* This pulls the text away from the left and centers it */
-    padding: 8px 16px;       /* Balanced padding on both sides */
+    padding: 8px 100px;       /* Balanced padding on both sides */
     font-size: 0.75rem;
     flex-shrink: 0;
     text-align: center;
