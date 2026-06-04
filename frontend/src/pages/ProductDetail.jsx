@@ -19,7 +19,7 @@ function SimilarProducts({ currentId, category }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products?category=' + category)
+    fetch('https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products?category=' + category)
       .then(r => r.json())
       .then(data => setSimilar(data.filter(p => p.id !== currentId).slice(0, 4)))
       .catch(() => {});
@@ -90,7 +90,7 @@ export default function ProductDetail() {
   useEffect(() => {
     setLoading(true);
     setActiveImage(0);
-  fetch(`https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products/${id}`)
+  fetch(`https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products/${id}`)
       .then(r => r.json())
       .then(data => { setProduct(data); setLoading(false); })
       .catch(() => setLoading(false));
