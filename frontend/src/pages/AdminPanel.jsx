@@ -50,7 +50,7 @@ export default function AdminPanel({ onLogout }) {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch('/api/products');
+      const res = await fetch('https://durga-bartan-store-backend.onrender.com/api/products');
       const data = await res.json();
       setProducts(Array.isArray(data) ? data : []);
     } catch {
@@ -83,7 +83,7 @@ export default function AdminPanel({ onLogout }) {
     setSaving(true);
     try {
       const method = editProduct ? 'PUT' : 'POST';
-      const url = editProduct ? `/api/products/${form.id}` : '/api/products';
+      const url = editProduct ? `https://durga-bartan-store-backend.onrender.com/api/products/${form.id}` : 'https://durga-bartan-store-backend.onrender.com/api/products';
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
@@ -110,7 +110,7 @@ export default function AdminPanel({ onLogout }) {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`/api/products/${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://durga-bartan-store-backend.onrender.com/api/products/${id}`, { method: 'DELETE' });
       if (res.ok) {
         showToast('🗑️ Product deleted!');
         setProducts(products.filter(p => p.id !== id));
