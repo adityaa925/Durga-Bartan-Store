@@ -59,6 +59,15 @@ export default function Navbar({ searchTerm, onSearch }) {
           </Link>
         </div>
       </div>
+      <style>{`
+  @media (max-width: 768px) {
+    .navbar__phone-text { display: none; }
+    .navbar__actions { gap: 4px; }
+    .navbar__cart-btn { padding: 8px 10px; font-size: 0.8rem; }
+    .navbar__inner { padding: 0 10px; gap: 6px; }
+    .navbar__brand img { height: 44px !important; width: 44px !important; }
+  }
+`}</style>
     </nav>
   );
 }

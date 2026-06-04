@@ -3,7 +3,7 @@ export default function HeroBanner() {
     <section className="hero" id="hero-banner">
       <div className="hero__inner">
         <div className="hero__content">
-          <div className="hero__badge">✨ Trusted by 10,000+ families</div>
+          <div className="hero__badge">✨ Trusted by 1000+ families</div>
           <h1 className="hero__title">
             Premium Utensils &<br />
             <span>Crockery Collection</span>
@@ -49,12 +49,21 @@ export default function HeroBanner() {
             style={{
                  width: '320px',
                  height: '320px',
-                 objectFit: 'cover',
+                 objectFit: 'contain',
                  borderRadius: '50%',
                  boxShadow: '0 8px 40px rgba(139,69,19,0.4)',
                  animation: 'floatLogo 4s ease-in-out infinite',
                  border: '4px solid rgba(255,255,255,0.2)',
                   }}
+                  style={{
+                    width: '280px',
+                    height: '280px',
+                    objectFit: 'contain',
+                    borderRadius: '50%',
+                    background: '#FFF8F0',
+                    boxShadow: '0 8px 40px rgba(139,69,19,0.4)',
+                    animation: 'floatLogo 4s ease-in-out infinite',
+}}
           />
         </div>
       </div>
