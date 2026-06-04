@@ -1,4 +1,4 @@
-const API_BASE = 'https://durga-bartan-backend.onrender.com/api';
+const API_BASE = 'https://durga-bartan-store-backend.onrender.com/api';
 
 export async function fetchProducts(params = {}) {
   const query = new URLSearchParams(params).toString();
