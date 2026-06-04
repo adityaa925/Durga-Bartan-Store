@@ -526,9 +526,13 @@ input, textarea {
   backdrop-filter: blur(8px);
   @media (max-width: 768px) {
   .category-pill {
-    padding: 8px 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* This pulls the text away from the left and centers it */
+    padding: 8px 16px;       /* Balanced padding on both sides */
     font-size: 0.75rem;
     flex-shrink: 0;
+    text-align: center;
   }
 }
 }
