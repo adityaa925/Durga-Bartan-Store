@@ -524,15 +524,15 @@ input, textarea {
   cursor: pointer;
   transition: var(--transition-base);
   backdrop-filter: blur(8px);
-  
-}
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
   .category-pill {
-    padding: 8px 14px;
-    font-size: 0.78rem;
-    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
   }
 }
+}
+
 .category-pill:hover {
   border-color: var(--primary-light);
   color: var(--primary);
