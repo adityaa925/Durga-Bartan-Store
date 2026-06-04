@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 const PRODUCTS_FILE = path.join(__dirname, 'data', 'products.json');
 
 // Middleware
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173','https://your-frontend-name.onrender.com'] }));
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Backend is running');
