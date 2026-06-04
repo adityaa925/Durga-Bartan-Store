@@ -22,7 +22,7 @@ export default function SearchBar({ searchTerm, onSearch }) {
 
   // Load all products once
   useEffect(() => {
-    fetch('https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products')
+    fetch('https://durga-bartan-store-backend.onrender.com/api/products')
       .then(r => r.json())
       .then(data => setProducts(Array.isArray(data) ? data : []))
       .catch(() => {});

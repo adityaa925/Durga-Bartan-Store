@@ -19,7 +19,7 @@ export default function HomePage({ searchTerm }) {
   const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
-    fetch('https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products')
+    fetch('https://durga-bartan-store-backend.onrender.comhttps://durga-bartan-store-backend.onrender.com/api/products')
       .then((r) => r.json())
       .then((data) => {
         setProducts(Array.isArray(data) ? data : (data.products || []));
