@@ -8,6 +8,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import OrderConfirmation from './pages/OrderConfirmation';
 import AdminApp from './pages/AdminApp';
 import ProductDetail from './pages/ProductDetail';
+import BrandsPage from './pages/BrandsPage';
 
 function Toast() {
   const { toast } = useCart();
@@ -37,6 +38,7 @@ function AppContent() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/order/:orderId" element={<OrderConfirmation />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/brands" element={<BrandsPage />} />
       </Routes>
     </>
   );
