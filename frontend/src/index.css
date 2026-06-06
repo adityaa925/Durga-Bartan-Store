@@ -1494,3 +1494,17 @@ input, textarea {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .category-pill {
+    padding: 8px 14px !important;
+    font-size: 0.78rem !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    min-width: fit-content !important;
+  }
+  .categories__grid {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
