@@ -7,78 +7,92 @@ const BRANDS = [
     id: 'milton',
     name: 'Milton',
     tagline: 'Premium Insulated Cookware',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Milton_housewares_logo.jpg/220px-Milton_housewares_logo.jpg',
+    logo: 'https://www.miltonindia.com/pub/static/version1/frontend/Milton/miltonstore/en_US/images/logo.svg',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #1565C0, #42A5F5)',
     shadow: 'rgba(21,101,192,0.5)',
     description: 'Trusted by millions for insulated cookware & lunch boxes.',
     founded: '1972',
     products: '500+',
+    emoji: '🍳',
   },
   {
     id: 'prestige',
     name: 'Prestige',
     tagline: "India's No.1 Pressure Cooker",
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Prestige_logo.jpg/220px-Prestige_logo.jpg',
+    logo: 'https://www.prestigesmartchef.com/pub/static/version1/frontend/Prestige/default/en_US/images/logo.png',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #B71C1C, #EF5350)',
     shadow: 'rgba(183,28,28,0.5)',
     description: 'Premium pressure cookers & cookware since 1955.',
     founded: '1955',
     products: '1000+',
+    emoji: '🥘',
   },
   {
     id: 'hawkins',
     name: 'Hawkins',
     tagline: 'Better Cooking. Better Living.',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hawkins_Cookers_logo.png/220px-Hawkins_Cookers_logo.png',
+    logo: 'https://www.hawkinscookers.com/images/hawkins-logo.png',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #1B5E20, #66BB6A)',
     shadow: 'rgba(27,94,32,0.5)',
     description: 'Iconic pressure cookers loved by Indian families.',
     founded: '1959',
     products: '200+',
+    emoji: '🫕',
   },
   {
     id: 'cello',
     name: 'Cello',
     tagline: 'Quality You Can Trust',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Cello_World_logo.svg/220px-Cello_World_logo.svg.png',
+    logo: 'https://www.celloworld.com/pub/static/version1/frontend/Cello/default/en_US/images/logo.png',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #4A148C, #AB47BC)',
     shadow: 'rgba(74,20,140,0.5)',
     description: 'Household products — cookware, storage & more.',
     founded: '1986',
     products: '800+',
+    emoji: '🧊',
   },
   {
     id: 'vinod',
     name: 'Vinod Cookware',
     tagline: 'Steel That Lasts a Lifetime',
     logo: 'https://vinodcookware.com/cdn/shop/files/Vinod_Logo_Black.png',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #3E2723, #8D6E63)',
     shadow: 'rgba(62,39,35,0.5)',
     description: 'Premium stainless steel utensils & cookware.',
     founded: '1962',
     products: '400+',
+    emoji: '🥄',
   },
   {
     id: 'richlife',
     name: 'Richlife',
     tagline: 'Rich Quality. Rich Life.',
     logo: '',
+    logoBg: '#FFF8E1',
     bg: 'linear-gradient(135deg, #E65100, #FFB300)',
     shadow: 'rgba(230,81,0,0.5)',
     description: 'Quality steel utensils for every Indian kitchen.',
     founded: '2000',
     products: '150+',
+    emoji: '✨',
   },
   {
     id: 'borosil',
     name: 'Borosil',
     tagline: 'Pure. Safe. Healthy.',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Borosil_logo.svg/220px-Borosil_logo.svg.png',
+    logo: 'https://www.borosil.com/cdn/shop/files/borosil-logo.png',
+    logoBg: '#fff',
     bg: 'linear-gradient(135deg, #006064, #00BCD4)',
     shadow: 'rgba(0,96,100,0.5)',
     description: 'Premium borosilicate glass — safe & elegant.',
     founded: '1962',
     products: '300+',
+    emoji: '🥛',
   },
 ];
 
@@ -173,20 +187,27 @@ function BrandCard({ brand, index }) {
           boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
           position: 'relative', zIndex: 1,
           overflow: 'hidden',
+          flexDirection: 'column', gap: 2,
         }}>
           {brand.logo ? (
             <img
               src={brand.logo}
               alt={brand.name}
-              style={{ width: '80%', height: '80%', objectFit: 'contain' }}
+              style={{ width: '75%', height: '75%', objectFit: 'contain' }}
               onError={e => {
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = `<span style="font-size:2.5rem">🏪</span>`;
+                const fallback = e.target.nextSibling;
+                if (fallback) fallback.style.display = 'flex';
               }}
             />
-          ) : (
-            <span style={{ fontSize: '2.5rem' }}>✨</span>
-          )}
+          ) : null}
+          <div style={{
+            display: brand.logo ? 'none' : 'flex',
+            flexDirection: 'column', alignItems: 'center',
+          }}>
+            <span style={{ fontSize: '2.8rem', lineHeight: 1 }}>{brand.emoji}</span>
+            <span style={{ fontSize: '0.6rem', fontWeight: 800, color: '#5C4A32', marginTop: 2 }}>{brand.name}</span>
+          </div>
         </div>
 
         {/* Brand name */}
